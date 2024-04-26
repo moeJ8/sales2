@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="sales.MainPage">
+
+    <StackLayout>
+        <StackLayout>
+            <Label Text="Name"/>
+            <Entry x:Name="Name"/>
+            <Label Text="Last Name"/>
+            <Entry x:Name="lastName"/>
+            <Label Text="Tel. No."/>
+            <Entry x:Name="Tel" Keyboard="Numeric"/>
+            
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <RadioButton x:Name="male" Content="Male"/>
+            <RadioButton x:Name="female" Content="Female"/>
+        </StackLayout>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <CheckBox x:Name="fisher" Grid.Row="0" Grid.Column="0"/>
+            <CheckBox x:Name="homee" Grid.Row="0" Grid.Column="2"/>
+            <CheckBox x:Name="paint" Grid.Row="1" Grid.Column="0"/>
+            <CheckBox x:Name="football" Grid.Row="1" Grid.Column="2"/>
+        </Grid>
+        <StackLayout Orientation="Vertical">
+            
+        
+            <StackLayout BackgroundColor="White">
+                <Button x:Name="add" Text="Add" Clicked="add_Clicked"/>
+            </StackLayout>
+
+            <ListView x:Name="salesListXaml" Background="BlanchedAlmond" HasUnevenRows="True" ItemTapped="salesListXaml_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text= "{Binding name}" TextColor="Black"/>
+                                <Label Text="{Binding lastName}" TextColor="Black"/>
+                                <Label Text="{Binding telephone}" TextColor="Black"/>
+                                <Label Text="{Binding gender}" TextColor="Black"/>
+                                <Label Text="{Binding si1}" TextColor="Black"/>
+                                <Label Text="{Binding si2}" TextColor="Black"/>
+                                <Label Text="{Binding si3}" TextColor="Black"/>
+                                <Label Text="{Binding si4}" TextColor="Black"/>
+                                
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout BackgroundColor="White">
+                <Button x:Name="show" Text="Show" Clicked="show_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
